@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="he-IL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/Style.css">
+
+    <title>ינאי משכנתאות – פתרונות משכנתאות ייעוץ משכנתאות – ינאי משכנתאות – פתרונות ייעוץ משכנתאות</title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__data container-fluid">
+                <a href="#" class="nav__logo navbar-brand right-20">
+                    <img src="assets/img/logo.png"
+                         alt="logo"
+                         width="370"
+                         height="350"
+                         class="navbar-brand"
+                          />
+                </a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__toggle-menu"></i>
+                    <i class="ri-close-line nav__toggle-close"></i>
+                </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav-item"> 
+                        <a href="#" class="nav__link">ראשי</a>
+                    </li>
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <a href="#services" class="nav__link">השרותים שלנו</a>
+                    </li>
+                    <li>
+                        <a href="#calculator" class="nav__link">מחשבון משכנתא</a>
+                    </li>
+                    <li>
+                        <a href="#blog" class="nav__link">מאמרים וטיפים</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav__link">קצת עלינו</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav__link">המלצות</a>
+                    </li>
+                    <div class="nav__contact">
+                        <i class="ri-phone-fill"></i>
+                        <a href="tel:0544121234" class="nav__tel">054-412-1234</a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--section home-->
+    <section class="home">
+        <div class="section__container">
+            <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="assets/img/background.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1 class="home__title">
+                    ייעוץ משכנתאות ומחזור משכנתאות בהתאמה אישית
+                    <hr class="line">
+                    <br />
+                    <h2 class="home_subtitle" id="home_subtitle">
+                        הדרך למשכנתא חכמה מתחילה כאן – ייעוץ מקצועי שמבטיח חיסכון ושקט נפשי
+                    </h2>
+                </h1> 
+                <button class="home__buttun">
+                    לתאום פגישה >
+                </button>
+            </div>
+            <!--section form contact-->
+            <div class="contact_container">
+                <div class="form">
+                    <div class="contact_info"></div>
+                    <div class="contact_form">
+                        <form action="index.html" id="contactForm">
+                          
+                            <h1 class="title">
+                                לקביעת פגישה או קבלת ייעוץ
+                            </h1>
+                            <h3 class="subtitle">
+                                השאירו פרטים ונחזור אליכם בהקדם.
+                            </h3>
+                            <h3 class="subtitle">
+                                התהליך מתאים <span class="subtitle_span">לבעלי נכס בלד</span>
+                            </h3>
+                            <div class="input_container">
+                                <label for="">שם מלא</label>
+                                <input type="text" name="name" required="required" placeholder="שם מלא" class="input">
+                            </div>
+                            <div class="input_container">
+                                <label for="">טלפון</label>
+                                <input dir="rtl" size="1" type="tel" name="form_fields[field_3caac44]" placeholder="טלפון" required="required" aria-required="true" pattern="[0-9()#&+*-=.]+" title="מותר להשתמש רק במספרים ותווי טלפון (#, -, *, וכו')." class="input">
+                            </div>
+                            <div class="input_container">
+                                <label for=""> השם יש בבעלותי נכס?</label>
+                                <select id="noyes" name="no/yes">
+                                    <option value="yes">כן</option>
+                                    <option value="no">לא</option>
+                                </select>
+                            </div>
+                            <div class="input_container">
+                                <label for="">סוג הנכס</label>
+                                <select id="house" name="house">
+                                    <option value="no">בית פרטי</option>
+                                    <option value="yes">נכס מסחרי או תעשייתי</option>
+                                </select>
+                            </div>
+                            <div class="input_container">
+                                <label for="">סכום הלוואה המבוקש</label>
+                                <select id="money" name="money">
+                                    <option value="no">₪150,000 - ₪250,000</option>
+                                    <option value="yes">₪250,000 - ₪500,000</option>
+                                    <option value="yes">₪500,000 ומעלה</option>
+                                </select>
+                            </div>
+                            <div class="g-recaptcha" data-sitekey="6LdplpUqAAAAAM-sS-nCJQUih7_L3JzByHJyJR32"></div>
+                            <input type="submit" data-sitekey="6LdplpUqAAAAAM-sS-nCJQUih7_L3JzByHJyJR32" data-callback='onSubmit' data-action='submit' value="שליחה >" class="btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section about-->
+    <section dir="rtl" class="about" id="about">
+        <div class="about_content">
+            <h2>אודות מנהל החברה</h2>
+            <p>
+              מנהל החברה, עם ניסיון של מעל 10 שנים בתחום ייעוץ המשכנתאות, מספק ללקוחות פתרונות מותאמים אישית 
+              ומשלב מקצועיות, ידע ותשומת לב לפרטים. המטרה היא לעזור לך לקבל את המשכנתא המתאימה ביותר לצרכים שלך.
+            </p>
+          </div>
+          <div class="image">
+            <img src="assets/img/about.png" alt="מנהל החברה" 
+            />
+          </div>
+    </section>
+    <!--services section-->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <div class="service-title">Financial Planning</div>
+                <div class="service-description">
+                    Personalized planning for managing family budgets, investments, and building a stable financial future.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <div class="service-title">Mortgage Advice</div>
+                <div class="service-description">
+                    Assistance in finding the best mortgage options, including refinancing and improving terms.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <div class="service-title">Savings Optimization</div>
+                <div class="service-description">
+                    Evaluating financial viability and improving conditions with banks and financial institutions.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <div class="service-title">Savings Optimization</div>
+                <div class="service-description">
+                    Evaluating financial viability and improving conditions with banks and financial institutions.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <div class="service-title">Savings Optimization</div>
+                <div class="service-description">
+                    Evaluating financial viability and improving conditions with banks and financial institutions.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <div class="service-title">Savings Optimization</div>
+                <div class="service-description">
+                    Evaluating financial viability and improving conditions with banks and financial institutions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section calculator-->
+    <!--<section class="calculator" id="calculator">
+        <h1>מחשבון משכנתא</h1>
+        <form id="mortgage-form">
+            <label for="loanAmount">סכום ההלוואה (₪):</label>
+            <input type="number" id="loanAmount" placeholder="לדוגמה: 500000" required>
+
+            <label for="annualRate">ריבית שנתית (%):</label>
+            <input type="number" id="annualRate" step="0.01" placeholder="לדוגמה: 3.5" required>
+
+            <label for="loanTerm">תקופת ההלוואה (בשנים):</label>
+            <input type="number" id="loanTerm" placeholder="לדוגמה: 20" required>
+
+            <button type="submit">חשב</button>
+        </form>
+        <div id="result" class="result"></div>
+    </section> -->
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
