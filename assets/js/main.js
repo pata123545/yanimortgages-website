@@ -122,3 +122,20 @@ window.addEventListener("scroll", () => {
             event.preventDefault();
         }
     });
+
+    // card section desing
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+      
+        // Function to reveal cards on page load with delay
+        const revealCards = () => {
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("visible");
+            }, index * 300); // Delay for each card
+          });
+        };
+      
+        // Trigger the animation
+        revealCards();
+      });

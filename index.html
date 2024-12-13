@@ -66,94 +66,77 @@
         </nav>
     </header>
 
-    <!--section home-->
-    <section class="home">
-        <div class="section__container">
-            <video id="background-video" autoplay loop muted>
-                <source src="assets/img/background.mp4" type="video/mp4">
-            </video>
-            <div class="content">
-                <h1 class="home__title">
-                    ייעוץ משכנתאות ומחזור משכנתאות בהתאמה אישית
-                    <hr class="line">
-                    <br />
-                    <h2 class="home_subtitle" id="home_subtitle">
-                        הדרך למשכנתא חכמה מתחילה כאן – ייעוץ מקצועי שמבטיח חיסכון ושקט נפשי
-                    </h2>
-                </h1> 
-                <button class="home__buttun">
-                    לתאום פגישה >
-                </button>
-            </div>
-            <!--section form contact-->
-            <div class="contact_container">
-                <div class="form">
-                    <div class="contact_info"></div>
-                    <div class="contact_form">
-                        <form action="index.html" id="contactForm">
-                          
-                            <h1 class="title">
-                                לקביעת פגישה או קבלת ייעוץ
-                            </h1>
-                            <h3 class="subtitle">
-                                השאירו פרטים ונחזור אליכם בהקדם.
-                            </h3>
-                            <h3 class="subtitle">
-                                התהליך מתאים <span class="subtitle_span">לבעלי נכס בלד</span>
-                            </h3>
-                            <div class="input_container">
-                                <label for="">שם מלא</label>
-                                <input type="text" name="name" required="required" placeholder="שם מלא" class="input">
-                            </div>
-                            <div class="input_container">
-                                <label for="">טלפון</label>
-                                <input dir="rtl" size="1" type="tel" name="form_fields[field_3caac44]" placeholder="טלפון" required="required" aria-required="true" pattern="[0-9()#&+*-=.]+" title="מותר להשתמש רק במספרים ותווי טלפון (#, -, *, וכו')." class="input">
-                            </div>
-                            <div class="input_container">
-                                <label for=""> השם יש בבעלותי נכס?</label>
-                                <select id="noyes" name="no/yes">
-                                    <option value="yes">כן</option>
-                                    <option value="no">לא</option>
-                                </select>
-                            </div>
-                            <div class="input_container">
-                                <label for="">סוג הנכס</label>
-                                <select id="house" name="house">
-                                    <option value="no">בית פרטי</option>
-                                    <option value="yes">נכס מסחרי או תעשייתי</option>
-                                </select>
-                            </div>
-                            <div class="input_container">
-                                <label for="">סכום הלוואה המבוקש</label>
-                                <select id="money" name="money">
-                                    <option value="no">₪150,000 - ₪250,000</option>
-                                    <option value="yes">₪250,000 - ₪500,000</option>
-                                    <option value="yes">₪500,000 ומעלה</option>
-                                </select>
-                            </div>
-                            <div class="g-recaptcha" data-sitekey="6LdplpUqAAAAAM-sS-nCJQUih7_L3JzByHJyJR32"></div>
-                            <input type="submit" data-sitekey="6LdplpUqAAAAAM-sS-nCJQUih7_L3JzByHJyJR32" data-callback='onSubmit' data-action='submit' value="שליחה >" class="btn">
-                        </form>
-                    </div>
+           <!--section home-->
+           <section class="home">
+            <div class="section__container">
+                <video id="background-video" autoplay loop muted>
+                    <source src="assets/img/background.mp4" type="video/mp4">
+                </video>
+                <div class="content">
+                    <h1 class="home__title">
+                        ייעוץ משכנתאות ומחזור משכנתאות בהתאמה אישית
+                        <hr class="line">
+                        <br />
+                        <h2 class="home_Secondtitle" id="home_Secondtitle">
+                            הדרך למשכנתא חכמה מתחילה כאן – ייעוץ מקצועי שמבטיח חיסכון ושקט נפשי
+                        </h2>
+                    </h1> 
+                    <button class="home__buttun">
+                        לתאום פגישה >
+                    </button>
                 </div>
-            </div>
+
+
+                 <!--section form contact-->
+     <section class="contact_section">
+        <div class="contact_form">
+            <h1>טופס יצירת קשר</h1>
+            <form action="submit-form.php" method="post">
+                <label for="name">שם מלא:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="phone">טלפון:</label>
+                <input type="tel" id="phone" name="phone" required>
+    
+                <label for="email">כתובת דוא"ל:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <button type="submit">שלח</button>
+            </form>
         </div>
     </section>
-
-    <!--section about-->
-    <section dir="rtl" class="about" id="about">
-        <div class="about_content">
-            <h2>אודות מנהל החברה</h2>
-            <p>
-              מנהל החברה, עם ניסיון של מעל 10 שנים בתחום ייעוץ המשכנתאות, מספק ללקוחות פתרונות מותאמים אישית 
-              ומשלב מקצועיות, ידע ותשומת לב לפרטים. המטרה היא לעזור לך לקבל את המשכנתא המתאימה ביותר לצרכים שלך.
+            
+    <!-- section cards -->
+    <section class="card_container">
+        <div class="card">
+          <img class="card_img" src="assets/img/manager.png"/>
+          <h2>100% יועץ משכנתאות</h2>
+          <p>זו ההתמחות היחידה שלי עבורכם. לא כתחביב או שירות נלווה.</p>
+        </div>
+        <div class="card">
+            <img class="card_img" src="assets/img/conclusion.png"/>
+          <h2>משכנתא בהתאמה אישית</h2>
+          <p>אין אצלי תבניות וברירות מחדל. 
+            כל משכנתא נבנית עם תמהיל ייחודי ומתאים לצרכי הלקוח.</p>
+        </div>
+        <div class="card">
+            <img class="card_img" src="assets/img/property.png"/>
+          <h2>הרבה מעבר למשכנתא</h2>
+          <p>פתרונות יצירתיים וגמישות מחשבתית מעבר לגבולות המשכנתא.</p>
+        </div>
+        <div class="card">
+            <img class="card_img" src="assets/img/growup.png"/>
+            <h2>ניסיון</h2>
+            <p>שילוב של ניסיון מקצועי וניסיון חיים עבור תחום הדורש את שניהם!</p>
+        </div>
+        <p class="card_Secondtitle">חתימה על משכנתא היא צעד משמעותי בחיים, שמשלב בין החלטות כלכליות מרחיקות לכת לבין הגשמת חלום רכישת בית.
+             תהליך לקיחת המשכנתא כולל בחינה מדוקדקת של הצרכים הכלכליים, בחירת מסלול מתאים  לאורך זמן.
+              תכנון נכון והתייעצות עם מומחים יכולים להפוך את התהליך לחוויה מבוקרת ובטוחה יותר.
+              שדמיינתם - אתם צריכים לצדכם יועץ מומחה שילווה את התהליך משלב התכנון ועד החתימה. נעים להכיר - אסף קרמיסי, יועץ משכנתאות שלוקח אתכם אישית. 
             </p>
-          </div>
-          <div class="image">
-            <img src="assets/img/about.png" alt="מנהל החברה" 
-            />
-          </div>
-    </section>
+      </section>
+   
+
     <!--services section-->
     <section class="services" id="services">
         <div class="services-container">
