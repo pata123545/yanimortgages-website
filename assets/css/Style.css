@@ -30,21 +30,21 @@
 
 @media (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
 /* For devices between 768px and 1200px (e.g., tablets) */
 @media (min-width: 768px) and (max-width: 1200px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
 /* For screens larger than 1200px (e.g., Full HD, 2K, 4K) */
 @media (min-width: 1200px) {
   body {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
