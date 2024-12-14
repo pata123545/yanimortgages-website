@@ -28,6 +28,26 @@
     --z-fixed: 100;
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* For devices between 768px and 1200px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* For screens larger than 1200px (e.g., Full HD, 2K, 4K) */
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
     :root {
         --normal-font-size: 1rem;
@@ -520,7 +540,7 @@ nav a.active {
   transform: translateY(0);
 }
 
-.card_Secondtitle {
+.card_secondtitle {
   width: 1085px;
   height: 183px;
   font-size: 1.5rem;
@@ -529,7 +549,7 @@ nav a.active {
   font-family: "Assistant";
   line-height: 3rem;
   text-align: center;
-  margin-top: -24%;
+  margin-top: -20%;
 }
 
 .card_img {
@@ -545,34 +565,40 @@ nav a.active {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  background-size: 50%;
+  object-fit: cover;
   overflow: hidden;
-  height: 450px;
-
+  height: 350px;
+  background: #2468ab;
   align-items: center;
-  background-color: #268dd0;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 .contact {
   color: #000;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-form {
   background: #ffffff;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 40%;
-  max-width: 200px;
   box-sizing: border-box;
+  align-items: center;
+  text-align: center;
 }
 
 h1 {
   font-size: 4rem;
   text-align: center;
   color: #fff;
+  margin-top: 4%;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   color: #fff;
 }
@@ -581,12 +607,16 @@ form {
   display: flex;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-top: 10%;
+  width: 200px;
+  margin-right: -3%;
+  margin-top: 7%;
+  align-items: center;
 }
 
 .form_input {
   display: grid;
   gap: 5px;
+  align-items: center;
 }
 
 label {
@@ -596,16 +626,17 @@ label {
 
 input {
   margin-bottom: 15px;
-  width: 300px;
+  width: 250px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 17px;
   font-size: 14px;
+  align-items: center;
 }
 
 button {
-  padding: 10px;
-  background-color: #007BFF;
+  padding: 10px 50px;
+  background-color: #c9a959;
   color: #fff;
   border: none;
   height: 46px;
@@ -614,54 +645,57 @@ button {
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 5%;
+  margin-right: 5%;
 }
-
-button:hover {
-  background-color: #0056b3;
-}
-
 
 /* About section design */
 .about {
-  display: flex;
-  gap: 10px;
-  margin: 0 auto;
-  padding: 50px;
+  width: 100%;
+  height: 700px;
+  display: grid;
+  padding: 78px 0px;
   background-color: #f1f4f9;
 }
 
-.about_content {
+.about img {
+  height: auto;
+  width: 420px;
+}
+
+.about_container {
   position: relative;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about_text {
+  width: 800px;
   display: grid;
-  margin-right: 10rem;
-}
-
-.content h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  overflow: hidden;
+  color: #000;
   font-family: "Assistant";
 }
 
-.content p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 15px;
-  font-family: "Assistant";
+.about_text  #title_about {
+  color: #000;
 }
 
-.image {
+.about_secondtitle {
+  display: flex;
+  line-height: 1.3;
+  font-size: 1.5rem;
+  width: 800px;
   text-align: center;
 }
 
-.image img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
 @media (max-width: 768px) {
-  .about-manager {
+  .about_container {
     grid-template-columns: 1fr;
     text-align: center;
   }
