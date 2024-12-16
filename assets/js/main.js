@@ -139,3 +139,108 @@ window.addEventListener("scroll", () => {
         // Trigger the animation
         revealCards();
       });
+
+      /* section calculator design*/
+
+      const rowsPerPage = 10;
+      let currentPage = 1;
+      let amortizationData = [];
+
+      // פונקציה לחישוב המשכנתא
+      function calculateMortgage() {
+          const loanAmount = parseFloat(document.getElementById("loanAmount").value);
+          const annualInterestRate = parseFloat(document.getElementById("annualInterestRate").value);
+          const loanTerm = parseInt(document.getElementById("loanTerm").value);
+          
+          if (isNaN(loanAmount) || isNaN(annualInterestRate) || isNaN(loanTerm)) {
+              alert("אנא מלא את כל השדות בצורה נכונה.");
+              return;
+          }
+
+          const monthlyInterestRate = (annualInterestRate / 100) / 12;
+          const numberOfPayments = loanTerm * 12;
+          const monthlyPayment = 
+              (loanAmount * monthlyInterestRate) / 
+              (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+
+          amortizationData = generateAmortizationData(loanAmount, monthlyInterestRate, monthlyPayment, numberOfPayments);
+          currentPage = 1;
+          renderTable();
+      }
+
+      // יצירת נתונים של לוח סילוקין
+      function generateAmortizationData(loanAmount, monthlyInterestRate, monthlyPayment, numberOfPayments) {
+          let balance = loanAmount;
+          const data = [];
+          
+          for (let i = 1; i <= numberOfPayments; i++) {
+              const interestPayment = balance * monthlyInterestRate;
+              const principalPayment = monthlyPayment - interestPayment;
+              balance -= principalPayment;
+              data.push({
+                  paymentNumber: i,
+                  monthlyPayment: monthlyPayment.toFixed(2),
+                  interestPayment: interestPayment.toFixed(2),
+                  principalPayment: principalPayment.toFixed(2),
+                  remainingBalance: balance.toFixed(2),
+              });
+          }
+          return data;
+      }
+
+      // הצגת הטבלה עם נתוני המשכנתא
+      function renderTable() {
+          const start = (currentPage - 1) * rowsPerPage;
+          const end = start + rowsPerPage;
+          const currentData = amortizationData.slice(start, end);
+
+          let tableHTML = `<table>
+              <tr>
+                  <th>מספר תשלום</th>
+                  <th>תשלום חודשי (₪)</th>
+                  <th>ריבית (₪)</th>
+                  <th>קרן (₪)</th>
+                  <th>יתרה (₪)</th>
+              </tr>`;
+          
+          currentData.forEach(row => {
+              tableHTML += `
+                  <tr>
+                      <td>${row.paymentNumber}</td>
+                      <td>${row.monthlyPayment}</td>
+                      <td>${row.interestPayment}</td>
+                      <td>${row.principalPayment}</td>
+                      <td>${row.remainingBalance}</td>
+                  </tr>
+              `;
+          });
+
+          tableHTML += `</table>`;
+          tableHTML += renderPagination();
+          document.getElementById("results").innerHTML = tableHTML;
+      }
+
+      // יצירת כפתורי הפגינציה
+      function renderPagination() {
+          const totalPages = Math.ceil(amortizationData.length / rowsPerPage);
+          let paginationHTML = `<div class="pagination">`;
+
+          paginationHTML += `
+              <button onclick="changePage(1)" ${currentPage === 1 ? 'class="disabled"' : ''}>←</button>
+              <span>עמוד ${currentPage} מתוך ${totalPages}</span>
+              <button onclick="changePage(${totalPages})" ${currentPage === totalPages ? 'class="disabled"' : ''}>→</button>
+          `;
+          
+          paginationHTML += `</div>`;
+          return paginationHTML;
+      }
+
+      // שינוי עמוד בעזרת כפתורים
+      function changePage(page) {
+          if (page < 1 || page > Math.ceil(amortizationData.length / rowsPerPage)) return;
+          currentPage = page;
+          renderTable();
+      }
+
+      // הוספת מאזין לכפתור החישוב
+      document.getElementById("calculateButton").addEventListener("click", calculateMortgage);

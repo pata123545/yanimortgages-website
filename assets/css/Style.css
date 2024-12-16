@@ -28,6 +28,20 @@
     --z-fixed: 100;
 }
 
+main {
+  width: 80%;
+  width: 100%; 
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  main {
+      width: 95%; 
+      padding: 10px; 
+  }
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 15px;
@@ -566,9 +580,11 @@ nav a.active {
   flex-wrap: wrap;
   flex-direction: column;
   background-size: 50%;
+  margin: 0 auto;
   object-fit: cover;
   overflow: hidden;
-  height: 350px;
+  width: 1348px;
+  height: 277px;
   background: #2468ab;
   align-items: center;
   border-bottom-right-radius: 15px;
@@ -590,7 +606,7 @@ nav a.active {
   text-align: center;
 }
 
-h1 {
+.contact_title {
   font-size: 4rem;
   text-align: center;
   color: #fff;
@@ -607,9 +623,7 @@ form {
   display: flex;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  width: 200px;
-  margin-right: -3%;
-  margin-top: 7%;
+  margin: 0 auto;
   align-items: center;
 }
 
@@ -625,12 +639,11 @@ label {
 }
 
 input {
-  margin-bottom: 15px;
-  width: 250px;
-  padding: 10px;
+  width: 239px;
+  height: 44px;
   border: 1px solid #ddd;
   border-radius: 17px;
-  font-size: 14px;
+  font-size: 16px;
   align-items: center;
 }
 
@@ -719,26 +732,61 @@ button {
 
 /*services section design */
 .services {
+    position: relative;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .services-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
     gap: 20px;
-    max-width: var(--max-width);
-    width: 100%;
-    padding: 20px;
-    margin-top: 15rem;
-    margin-right: 9rem;
+    width: 85%;
+    height: 100vh;
+    padding: 30px;
+    margin: 0 auto;
+    gap: 15px;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.services_title {
+  text-align: center;
+  font-family: "Assistant";
+  font-size: 3rem;
+  color: #144779;
+  margin-top: 10%;
+  gap: 10px;
+}
+
+.line2 {
+  width: 70%;
+  height: 3px;
+  border: 0 none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 90px;
+  background-color: #268dd0;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.secondtitle {
+  text-align: center;
+  color: #144779;
+  font-size: 1.3rem;
+  font-family: "Assistant";
+  margin-top: -4%;
 }
 
 .service-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 30px;
+    height: 300px;
+    width: 400px;
+    align-items: center;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -756,13 +804,15 @@ button {
 .service-title {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #333;
+    color: #144779;;
+    font-weight: 400;
 }
 
 .service-description {
     font-size: 1em;
-    color: #666;
+    color: #144779;
     line-height: 1.6;
+    margin-top: 0%;
 }
 
 /* Responsive design for smaller screens */
@@ -776,4 +826,84 @@ button {
     .services-container {
         grid-template-columns: 1fr; /* 1 column for very small screens */
     }
+}
+
+/* section calculator design*/
+.calculator {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.calculator_container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #2e7d32;
+}
+label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+input[type="number"], button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+.pagination button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pagination button:hover {
+  background-color: #45a049;
+}
+.pagination span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+.pagination .disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
