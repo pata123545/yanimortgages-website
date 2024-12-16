@@ -28,44 +28,14 @@
     --z-fixed: 100;
 }
 
+html {
+  font-size: 100%;
+}
+
 main {
-  width: 80%;
-  width: 100%; 
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
-}
-
-@media (max-width: 1200px) {
-  .container {
-    padding: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-      width: 95%; 
-      padding: 10px; 
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-}
-
-
-@media screen and (min-width: 1024px) {
-    :root {
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-        --smaller-font-size: .813rem;
-    }
 }
 
 input,
@@ -82,12 +52,14 @@ textarea {
 
 body {
     font-family: "Assistant";
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-    min-height: 100vh;
-    font-weight: 300;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 ul {
@@ -108,7 +80,7 @@ a {
 }
 
 .section_height {
-    min-height: 100vh;
+  height: 100vh;
 }
 
 /*reusable css classes*/
@@ -126,25 +98,18 @@ a {
 .container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 /*section header*/
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
     height: var(--header-height);
-    width: 1520px;
-    height: 106px;
+    min-width: 100%;
+    top: 0;
+    max-width: 1200px;
     box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
     background-color: var(--color-header);
     z-index: var(--z-fixed);
-}
-
-
-.active { 
-    background-color: #fff;
 }
 
 /*section navbar*/
@@ -670,21 +635,18 @@ button {
 /* About section design */
 .about {
   height: 75vh;
-  display: grid;
-  padding: 50px 0px;
+  display: flex;
   background-color: #f1f4f9;
 }
 
 .about img {
   height: auto;
-  width: 100%;
-  margin-top: 5%;
-  float: left;
+  overflow: hidden;
   object-fit: cover;
 }
 
 .about_container {
-  position: relative;
+  position: absolute;
   width: 100%;
   display: flex;
   align-items: center;
@@ -692,10 +654,12 @@ button {
 }
 
 .about_text {
-  width: 100%;
-  display: inline-block;
+  display:  grid;
   font-size: 2rem;
-  margin-right: 5%;
+  overflow: hidden;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
   overflow: hidden;
   color: #000;
   font-family: "Assistant";
@@ -873,9 +837,7 @@ button {
   color: white;
   cursor: pointer;
 }
-button:hover {
-  background-color: #45a049;
-}
+
 table {
   width: 100%;
   margin-top: 20px;
@@ -903,9 +865,7 @@ th {
   border-radius: 50%;
   cursor: pointer;
 }
-.pagination button:hover {
-  background-color: #45a049;
-}
+
 .pagination span {
   margin: 0 10px;
   font-size: 16px;
