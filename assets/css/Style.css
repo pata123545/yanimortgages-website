@@ -30,10 +30,34 @@
 
 html {
   font-size: 100%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%
+}
+
+*,:after,:before {
+  box-sizing: border-box
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 2560px) {
+  body {
+    font-size: 22px;
+  }
 }
 
 main {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -52,8 +76,8 @@ textarea {
 
 body {
     font-family: "Assistant";
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    line-height: 1.5;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -85,13 +109,10 @@ a {
 
 /*reusable css classes*/
 .section {
-  width: 80%;
-  max-width: 1200px;
-  min-width: 300px;
+  width: 80vw;
+  max-width: 100%;
   height: auto;
-  min-height: 200px;
   margin: 0 auto; 
-  position: relative;
   transform: translateY(-50%); 
 }
 
@@ -104,9 +125,10 @@ a {
 .header {
     position: fixed;
     height: var(--header-height);
-    min-width: 100%;
+    width: 100vw;
+    left: 0;
+    right: 0;
     top: 0;
-    max-width: 1200px;
     box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
     background-color: var(--color-header);
     z-index: var(--z-fixed);
@@ -309,73 +331,6 @@ nav a.active {
     .nav__link:hover {
       background-color: initial;
     }
-    /* Dropdown */
-    .dropdown__button {
-      column-gap: 0.25rem;
-      pointer-events: none;
-    }
-    .dropdown__container {
-      height: max-content;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 6.5rem;
-      background-color: var(--body-color);
-      box-shadow: 0 6px 8px hsla(220, 68%, 12%, 0.05);
-      pointer-events: none;
-      opacity: 0;
-      transition: top 0.4s, opacity 0.3s;
-    }
-    .dropdown__content {
-      grid-template-columns: repeat(4, max-content);
-      column-gap: 6rem;
-      max-width: 1120px;
-      margin-inline: auto;
-    }
-    .dropdown__group {
-      padding: 4rem 0;
-      align-content: baseline;
-      row-gap: 1.25rem;
-    }
-    .dropdown__group:first-child, .dropdown__group:last-child {
-      margin: 0;
-    }
-    .dropdown__list {
-      row-gap: 0.75rem;
-    }
-    .dropdown__icon {
-      width: 60px;
-      height: 60px;
-      background-color: var(--first-color-lighten);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      margin-bottom: 1rem;
-    }
-    .dropdown__icon i {
-      font-size: 2rem;
-    }
-    .dropdown__title {
-      font-size: var(--normal-font-size);
-    }
-    .dropdown__link {
-      font-size: var(--small-font-size);
-    }
-    .dropdown__link:hover {
-      color: var(--first-color);
-    }
-    .dropdown__item {
-      cursor: pointer;
-    }
-    .dropdown__item:hover .dropdown__arrow {
-      transform: rotate(180deg);
-    }
-    .dropdown__item:hover > .dropdown__container {
-      top: 5.5rem;
-      opacity: 1;
-      pointer-events: initial;
-      cursor: initial;
-    }
   }
   @media screen and (min-width: 1152px) {
     .container {
@@ -391,7 +346,6 @@ nav a.active {
 }
 
 .section__container {
-   height: 100%;
     position: relative;
     background-size: cover;
     grid-template-columns: repeat(3, 1fr);
@@ -484,7 +438,7 @@ nav a.active {
   position: relative;
   display: flex;
   gap: 20px;
-  height: 70vh;
+  height: 80vh;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   flex-wrap: wrap;
   outline: hidden;
@@ -546,34 +500,20 @@ nav a.active {
 /* Contact section design */
 .contact_section {
   position: relative;
-  display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  background-size: 50%;
+  min-height: 50vh;
   margin: 0 auto;
-  object-fit: cover;
   overflow: hidden;
-  width: 1348px;
-  height: 277px;
   background: #2468ab;
-  align-items: center;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
 }
 .contact {
   color: #000;
-  align-items: center;
-  text-align: center;
 }
 
 .contact-form {
   background: #ffffff;
-  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  align-items: center;
-  text-align: center;
 }
 
 .contact_title {
@@ -592,15 +532,10 @@ h2 {
 form {
   display: flex;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 0 auto;
-  align-items: center;
 }
 
 .form_input {
-  display: grid;
-  gap: 5px;
-  align-items: center;
+  display: flex;
 }
 
 label {
@@ -609,12 +544,11 @@ label {
 }
 
 input {
-  width: 239px;
-  height: 44px;
+  width: 230px;
+  height: 40px;
   border: 1px solid #ddd;
   border-radius: 17px;
   font-size: 16px;
-  align-items: center;
 }
 
 button {
@@ -628,8 +562,6 @@ button {
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 5%;
-  margin-right: 5%;
 }
 
 /* About section design */
@@ -647,7 +579,6 @@ button {
 
 .about_container {
   position: absolute;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -707,15 +638,12 @@ button {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 .services-container {
     display: grid;
-    gap: 20px;
-    width: 85%;
-    height: 100vh;
     padding: 30px;
     margin: 0 auto;
+    width: 85vw;
     gap: 15px;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
@@ -797,80 +725,4 @@ button {
     .services-container {
         grid-template-columns: 1fr; /* 1 column for very small screens */
     }
-}
-
-/* section calculator design*/
-.calculator {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.calculator_container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-h1 {
-  text-align: center;
-  color: #2e7d32;
-}
-label {
-  font-size: 16px;
-  margin-bottom: 5px;
-  display: block;
-}
-input[type="number"], button {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-}
-button {
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-}
-
-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-th {
-  background-color: #4CAF50;
-  color: white;
-}
-.pagination {
-  text-align: center;
-  margin-top: 20px;
-}
-.pagination button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.pagination span {
-  margin: 0 10px;
-  font-size: 16px;
-}
-.pagination .disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
